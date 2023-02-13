@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Popup = (props) => {
+const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -26,25 +26,23 @@ const Popup = (props) => {
             border: "1px solid #ddd",
           }}
         >
-          <h3>{props.title}</h3>
+          <h3>Create new process</h3>
           <form onSubmit={handleSubmit}>
-            <label>
-              Name:
-              <input
-                type="text"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-              />
-            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="Process Name (mandatory)"
+              style={{ width: "200px" }}
+            />
             <br />
-            <label>
-              Description:
-              <input
-                type="text"
-                value={description}
-                onChange={(event) => setDescription(event.target.value)}
-              />
-            </label>
+            <input
+              type="text"
+              value={description}
+              onChange={(event) => setDescription(event.target.value)}
+              placeholder="Process Description (Optional)"
+              style={{ width: "200px", height: "150px", marginTop: "10px" }}
+            />
             <br />
             <button type="submit">Save</button>
             <button onClick={() => setIsOpen(!isOpen)}>Close</button>

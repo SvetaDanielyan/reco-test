@@ -30,7 +30,7 @@ export const MainPage = () => {
     const getUsers = async () => {
       const processes = await Api.getAllAsync('http://localhost:8080/api/v1/process-metadata')
       console.log(processes)
-      setMyCardsData(processes);
+      // setMyCardsData(processes);
     }
     getUsers()
 

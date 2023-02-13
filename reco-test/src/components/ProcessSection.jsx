@@ -5,8 +5,8 @@ import "./index.css";
 export const ProcessSection = (props) => {
   return (
     <div className="sectionContainer">
-      <div className="header">{props.title}</div>
-      <div>
+      <div className="sectionHeader">{props.title}</div>
+      <div className="cardsContainer">
         {props.processes?.map((item) => {
           return (
             <ProcessCard title={item.title} description={item.description} />

@@ -21,8 +21,13 @@ const cardsData = [
 export const MainPage = () => {
   return (
     <div>
-      <h1 className="header">PROCESS LIBRARY</h1>
-      <ProcessSection title="My processes" processes={cardsData} />
+      <div>
+        <h1 className="header">PROCESS LIBRARY</h1>
+      </div>
+      <button>Create new</button>
+
+      <ProcessSection title="My processes" processes={myCardsData} />
+      <ProcessSection title="Recommended" processes={cardsData} />
     </div>
   );
 };

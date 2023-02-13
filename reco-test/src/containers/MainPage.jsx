@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { ProcessSection } from "../components/ProcessSection";
 import ApiBase from "../services/api";
 import "./index.css";
+import Popup from "../components/Popup";
 
 // const myCardsData = [
 //   { title: "Card 1", description: "Description for card 1" },
@@ -41,7 +42,7 @@ export const MainPage = () => {
       <div>
         <h1 className="header">PROCESS LIBRARY</h1>
       </div>
-      <button>Create new</button>
+      <Popup/>
 
       <ProcessSection title="My processes" processes={myCardsData} />
       <ProcessSection title="Recommended" processes={cardsData} />

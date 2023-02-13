@@ -1,12 +1,15 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { ProcessSection } from "../components/ProcessSection";
+import ApiBase from "../services/api";
 import "./index.css";
 
-const myCardsData = [
-  { title: "Card 1", description: "Description for card 1" },
-  { title: "Card 2", description: "Description for card 2" },
-  { title: "Card 3", description: "Description for card 3" },
-];
+// const myCardsData = [
+//   { title: "Card 1", description: "Description for card 1" },
+//   { title: "Card 2", description: "Description for card 2" },
+//   { title: "Card 3", description: "Description for card 3" },
+// ];
 
 const cardsData = [
   {
@@ -18,7 +21,21 @@ const cardsData = [
   { title: "Card 3", description: "Description for card 3" },
 ];
 
+
 export const MainPage = () => {
+  const Api = new ApiBase()
+  const [myCardsData, setMyCardsData] = useState([])
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const processes = await Api.getAllAsync('http://localhost:8080/api/v1/process-metadata')
+      console.log(processes)
+      setMyCardsData(processes);
+    }
+    getUsers()
+
+  }, []) 
+
   return (
     <div>
       <div>

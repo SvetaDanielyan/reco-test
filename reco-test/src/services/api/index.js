@@ -1,7 +1,7 @@
 import Axios from 'axios';
   // import * as localStorage from '../utils/index';
   // import localStorageKeys from 'utils/constants/localStorageKeys';
-  import publicRoutes from 'utils/constants/routes';
+  import publicRoutes from '../utils/routes';
 
   
   export default class ApiBase{
